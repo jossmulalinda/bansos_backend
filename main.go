@@ -139,7 +139,7 @@ func GenerateJWT(username string) (string, error) {
 
 	claims := JWTClaims{
 		Username: username,
-		Exp:      time.Now().Add(24 * time.Hour).Unix(),
+		Exp:      time.Now().Add(5 * time.Minute).Unix(),
 	}
 	claimsBytes, _ := json.Marshal(claims)
 	claimsEncoded := base64.RawURLEncoding.EncodeToString(claimsBytes)
